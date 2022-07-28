@@ -17,7 +17,9 @@ const Home: NextPage = () => {
         <link rel="icon" href="/images/favicon.png" />
       </Head>
 
-      <main></main>
+      <main>
+        <h1>Hello World!</h1>
+      </main>
     </>
   );
 };
