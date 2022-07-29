@@ -1,8 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 
-import { TextField } from "../components/TextField";
-import { Button } from "../components/Button";
+import { Form } from "../components/Form";
 
 const Home: NextPage = () => {
   return (
@@ -21,16 +20,20 @@ const Home: NextPage = () => {
       </Head>
 
       <main>
-        <TextField
-          label={{ htmlFor: "username", value: "Digite o seu nome:" }}
-          input={{
-            type: "text",
-            placeholder: "Preencha com o seu nome",
-            id: "username",
+        <Form
+          textField={{
+            label: { htmlFor: "username", value: "Digite o seu nome:" },
+            input: {
+              type: "text",
+              placeholder: "Preencha com o seu nome",
+              id: "username",
+            },
+          }}
+          button={{
+            value: "ver cartas",
+            type: "submit",
           }}
         />
-
-        <Button button={{ value: "ver cartas" }} />
       </main>
     </>
   );

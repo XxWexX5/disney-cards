@@ -1,17 +1,14 @@
 import styles from "./styles.module.scss";
 
-interface Button {
-  value: string;
-}
-
 interface ButtonProps {
-  button: Button;
+  value: string;
+  type: "button" | "submit";
 }
 
-export function Button({ button }: ButtonProps) {
+export function Button({ value, type }: ButtonProps) {
   return (
     <div className={styles.containerButton}>
-      <button type="button">{button.value}</button>
+      <button type={type}>{value}</button>
     </div>
   );
 }

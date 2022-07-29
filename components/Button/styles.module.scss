@@ -1,7 +1,11 @@
 .containerButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   button {
     font-size: 1.65em;
-    padding: 0.8em 1em;
+    padding: 0.8em 2.65em;
     text-transform: uppercase;
     text-align: center;
     border: 0;
