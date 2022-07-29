@@ -1,0 +1,91 @@
+.containerCard {
+  width: 12.5rem;
+  margin: 5rem;
+
+  header {
+    margin-bottom: 1.65rem;
+    margin-left: -1rem;
+
+    h3 {
+      font-size: 1.35rem;
+
+      text-align: center;
+    }
+  }
+}
+
+.card {
+  width: 11.5rem;
+  height: 16rem;
+  background-image: url("/images/shape-card.svg");
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  position: relative;
+  transform: scale(1.1);
+
+  main {
+    width: 100%;
+    height: 100%;
+
+    span {
+      border: 10px solid transparent !important;
+
+      img {
+        transform: scale(0.93);
+      }
+    }
+
+    p {
+      padding: 1.45rem;
+      color: var(--white);
+      font-size: 1.65rem;
+    }
+  }
+
+  footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &.shape-orange {
+      display: none;
+    }
+
+    p {
+      font-family: Fredoka One, Inter, -apple-system, BlinkMacSystemFont,
+        Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
+        Helvetica Neue, sans-serif;
+      font-size: 1.35rem;
+      color: var(--white);
+      width: 100%;
+      text-align: center;
+      position: absolute;
+    }
+
+    svg {
+      width: 19em;
+      height: 7em;
+      transform: scale(1.3);
+      position: absolute;
+    }
+  }
+}
+
+.wrapperTextShadow {
+  position: relative;
+
+  .textBase {
+    color: var(--white);
+    text-shadow: 2px 2px var(--black);
+  }
+}
+
+.shape-orange {
+  display: none;
+}

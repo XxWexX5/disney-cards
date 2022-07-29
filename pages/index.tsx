@@ -3,6 +3,7 @@ import Head from "next/head";
 
 import { Form } from "../components/Form";
 import { Tag } from "../components/Tag";
+import { Card } from "../components/Card";
 
 const Home: NextPage = () => {
   return (
@@ -37,6 +38,13 @@ const Home: NextPage = () => {
         />
 
         <Tag value="Seja bem vindo," />
+
+        <Card
+          mainTitle="Gravity Falls"
+          number="8"
+          title="9-Eye"
+          color="orange"
+        />
       </main>
     </>
   );
