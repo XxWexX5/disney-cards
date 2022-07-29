@@ -1,0 +1,30 @@
+.containerButton {
+  button {
+    font-size: 1.65em;
+    padding: 0.8em 1em;
+    text-transform: uppercase;
+    text-align: center;
+    border: 0;
+    border-radius: 3px 3px 0 0px;
+    cursor: pointer;
+    margin-right: 5px;
+    background-color: var(--green-01);
+    border-bottom: 12px solid var(--green-02);
+    color: var(--white);
+    font-family: Fredoka One, -apple-system, BlinkMacSystemFont, Segoe UI,
+      Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
+      sans-serif;
+    letter-spacing: 0.05em;
+    transition: 0.25s background-color ease-in;
+
+    &:hover {
+      background-color: var(--green-04);
+    }
+
+    &:active {
+      transform: translatey(12px);
+      border: 0;
+      margin-bottom: 12px;
+    }
+  }
+}

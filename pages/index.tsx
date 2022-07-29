@@ -2,6 +2,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 
 import { TextField } from "../components/TextField";
+import { Button } from "../components/Button";
 
 const Home: NextPage = () => {
   return (
@@ -28,6 +29,8 @@ const Home: NextPage = () => {
             id: "username",
           }}
         />
+
+        <Button button={{ value: "ver cartas" }} />
       </main>
     </>
   );
