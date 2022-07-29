@@ -1,0 +1,34 @@
+.containerTextField {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+
+  label {
+    display: block;
+    margin-bottom: 0.85rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--white);
+  }
+
+  input {
+    background-color: var(--white);
+    border: 2px solid var(--green-02);
+    width: 100%;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 1.2rem;
+    color: var(--green-02);
+    font-weight: bold;
+
+    &:active,
+    &:focus {
+      border: 2px solid var(--green-01);
+    }
+  }
+}

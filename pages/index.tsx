@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 
-import { FaBeer } from "react-icons/fa";
+import { TextField } from "../components/TextField";
 
 const Home: NextPage = () => {
   return (
@@ -20,8 +20,14 @@ const Home: NextPage = () => {
       </Head>
 
       <main>
-        <h1>Hello World!</h1>
-        <FaBeer />
+        <TextField
+          label={{ htmlFor: "username", value: "Digite o seu nome:" }}
+          input={{
+            type: "text",
+            placeholder: "Preencha com o seu nome",
+            id: "username",
+          }}
+        />
       </main>
     </>
   );
