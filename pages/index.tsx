@@ -2,6 +2,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 
 import { Form } from "../components/Form";
+import { Tag } from "../components/Tag";
 
 const Home: NextPage = () => {
   return (
@@ -34,6 +35,8 @@ const Home: NextPage = () => {
             type: "submit",
           }}
         />
+
+        <Tag value="Seja bem vindo," />
       </main>
     </>
   );

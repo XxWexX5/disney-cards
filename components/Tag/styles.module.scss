@@ -1,0 +1,21 @@
+.containerTag {
+  display: inline-block;
+  background-color: var(--green-02);
+  color: var(--white);
+  font-size: 1rem;
+  padding: 0.85rem 1.35rem;
+  position: relative;
+
+  &:after {
+    content: "";
+    background-image: url("/images/decoration-tag.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 2rem;
+    height: 2rem;
+    position: absolute;
+    bottom: -25px;
+    right: -3px;
+  }
+}
