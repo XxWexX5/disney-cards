@@ -8,10 +8,10 @@ export function Tag({ value }: TagProps) {
   const username = "Wevison";
 
   return (
-    <div className={styles.containerTag}>
+    <header className={styles.containerTag}>
       <p>
         {value} <strong> {username}!</strong>
       </p>
-    </div>
+    </header>
   );
 }

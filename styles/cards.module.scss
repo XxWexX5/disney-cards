@@ -1,0 +1,89 @@
+.containerCards {
+  background-color: var(--white);
+  padding: 2.65rem 2rem;
+  height: 100%;
+
+  @media screen and (min-width: 1020px) {
+    padding: 2.65rem 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .wrapperContent {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    background-color: var(--red);
+    min-height: 100%;
+    padding-top: 6rem;
+    padding-bottom: 10rem;
+
+    > header {
+      position: absolute;
+      top: 20px;
+      right: -28px;
+    }
+
+    .wrapperCards {
+      flex-direction: column;
+
+      @media screen and (min-width: 768px) {
+        flex-direction: row;
+        display: flex;
+        grid-gap: 7rem;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      @media screen and (min-width: 1020px) {
+        width: 100%;
+        max-width: 80rem;
+        grid-gap: 10rem;
+      }
+
+      div + div {
+        margin-top: 7rem;
+
+        @media screen and (min-width: 768px) {
+          margin-top: 0;
+        }
+      }
+    }
+
+    .wrapperButtons {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @media screen and (min-width: 768px) {
+        bottom: -25px;
+      }
+
+      @media screen and (min-width: 1020px) {
+        bottom: -30px;
+      }
+
+      div + div {
+        margin-left: 1rem;
+
+        @media screen and (min-width: 768px) {
+          margin-left: 2rem;
+        }
+      }
+
+      button {
+        font-size: 1.25em;
+        padding: 0.8em 2em;
+
+        @media screen and (min-width: 768px) {
+          font-size: 1.65em;
+          padding: 0.8em 4em;
+        }
+      }
+    }
+  }
+}
