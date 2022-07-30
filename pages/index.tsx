@@ -2,8 +2,8 @@ import type { NextPage } from "next";
 import Head from "next/head";
 
 import { Form } from "../components/Form";
-import { Tag } from "../components/Tag";
-import { Card } from "../components/Card";
+
+import styled from "../styles/home.module.scss";
 
 const Home: NextPage = () => {
   return (
@@ -21,7 +21,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/images/favicon.png" />
       </Head>
 
-      <main>
+      <main className={styled.containerHome}>
         <Form
           textField={{
             label: { htmlFor: "username", value: "Digite o seu nome:" },
@@ -35,15 +35,6 @@ const Home: NextPage = () => {
             value: "ver cartas",
             type: "submit",
           }}
-        />
-
-        <Tag value="Seja bem vindo," />
-
-        <Card
-          mainTitle="Gravity Falls"
-          number="8"
-          title="9-Eye"
-          color="orange"
         />
       </main>
     </>
