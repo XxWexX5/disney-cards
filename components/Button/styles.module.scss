@@ -21,7 +21,7 @@
     transition: 0.25s background-color ease-in;
 
     &:hover {
-      background-color: var(--green-04);
+      filter: brightness(1.15);
     }
 
     &:active {

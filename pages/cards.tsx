@@ -1,5 +1,8 @@
+import { useEffect, useState } from "react";
 import type { NextPage } from "next";
 import Head from "next/head";
+
+import api from "../services/api";
 
 import { Tag } from "../components/Tag";
 import { Button } from "../components/Button";
@@ -8,6 +11,20 @@ import { Card } from "../components/Card";
 import styled from "../styles/cards.module.scss";
 
 const Cards: NextPage = () => {
+  const [responseAPI, setResponseAPI] = useState([]);
+
+  async function getDisneyCharacters() {
+    const { data } = await api.get("/");
+
+    setResponseAPI(data);
+  }
+
+  useEffect(() => {
+    getDisneyCharacters();
+  }, []);
+
+  console.log(responseAPI);
+
   return (
     <>
       <Head>
