@@ -8,10 +8,11 @@ interface CardProps {
   mainTitle: string;
   number: string;
   title: string;
+  imageUrl: string;
   color: string;
 }
 
-export function Card({ mainTitle, number, title, color }: CardProps) {
+export function Card({ mainTitle, number, title, imageUrl, color }: CardProps) {
   return (
     <div className={styles.containerCard}>
       <header>
@@ -23,10 +24,7 @@ export function Card({ mainTitle, number, title, color }: CardProps) {
       <main>
         <div className={styles.card}>
           <main>
-            <Image
-              src="https://static.wikia.nocookie.net/disney/images/5/51/Giffany.png"
-              layout="fill"
-            />
+            <Image src={imageUrl} layout="fill" />
 
             <div className={styles.wrapperTextShadow}>
               <p className={styles.textBase}>{number}</p>

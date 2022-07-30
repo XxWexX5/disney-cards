@@ -10,20 +10,90 @@ import { Card } from "../components/Card";
 
 import styled from "../styles/cards.module.scss";
 
+interface charactereDisney {
+  allies: [string];
+  enemies: [string];
+  films: [string];
+  imageUrl: string;
+  name: string;
+  parkAttractions: [string];
+  shortFilms: [string];
+  tvShows: [string];
+  url: string;
+  videoGames: [string];
+  _id: number;
+}
+
 const Cards: NextPage = () => {
-  const [responseAPI, setResponseAPI] = useState([]);
+  const [dataCharacters, setDataCharacters] = useState<charactereDisney[]>([]);
+  const [showCardsUntil, setShowCardsUntil] = useState(5);
 
   async function getDisneyCharacters() {
-    const { data } = await api.get("/");
+    const {
+      data: { data },
+    } = await api.get("/");
 
-    setResponseAPI(data);
+    if (data) {
+      processingResponse(data);
+    }
+  }
+
+  function processingResponse(data: charactereDisney[]) {
+    data.map((character: charactereDisney, position: number) => {
+      if (position < 8) {
+        setDataCharacters((prev) => [...prev, character]);
+      }
+    });
+  }
+
+  function getMainTitle({
+    allies,
+    enemies,
+    films,
+    parkAttractions,
+    shortFilms,
+    tvShows,
+    videoGames,
+    name,
+  }: charactereDisney) {
+    if (allies.length > 0) {
+      return allies[0];
+    }
+
+    if (enemies.length > 0) {
+      return enemies[0];
+    }
+
+    if (films.length > 0) {
+      return films[0];
+    }
+
+    if (parkAttractions.length > 0) {
+      return parkAttractions[0];
+    }
+
+    if (shortFilms.length > 0) {
+      return shortFilms[0];
+    }
+
+    if (tvShows.length > 0) {
+      return tvShows[0];
+    }
+
+    if (videoGames.length > 0) {
+      return videoGames[0];
+    }
+
+    return name;
+  }
+
+  function handleMoreCarts() {
+    console.log("Akiii");
   }
 
   useEffect(() => {
     getDisneyCharacters();
   }, []);
-
-  console.log(responseAPI);
 
   return (
     <>
@@ -45,59 +115,31 @@ const Cards: NextPage = () => {
           <Tag value="Seja bem vindo," />
 
           <div className={styled.wrapperCards}>
-            <Card
-              mainTitle="Gravity Falls"
-              number="8"
-              title="9-Eye"
-              color="orange"
-            />
-
-            <Card
-              mainTitle="Gravity Falls"
-              number="8"
-              title="9-Eye"
-              color="orange"
-            />
-
-            <Card
-              mainTitle="Gravity Falls"
-              number="8"
-              title="9-Eye"
-              color="orange"
-            />
-
-            <Card
-              mainTitle="Gravity Falls"
-              number="8"
-              title="9-Eye"
-              color="orange"
-            />
-
-            <Card
-              mainTitle="Gravity Falls"
-              number="8"
-              title="9-Eye"
-              color="orange"
-            />
-
-            <Card
-              mainTitle="Gravity Falls"
-              number="8"
-              title="9-Eye"
-              color="orange"
-            />
-
-            <Card
-              mainTitle="Gravity Falls"
-              number="8"
-              title="9-Eye"
-              color="orange"
-            />
+            {dataCharacters.map(
+              (characterDisney: charactereDisney, position: number) => {
+                if (position < showCardsUntil) {
+                  return (
+                    <Card
+                      key={characterDisney["_id"]}
+                      mainTitle={getMainTitle(characterDisney)}
+                      number="8"
+                      title={characterDisney.name}
+                      imageUrl={characterDisney.imageUrl}
+                      color="orange"
+                    />
+                  );
+                }
+              }
+            )}
           </div>
 
           <div className={styled.wrapperButtons}>
             <Button value="RANDOMIZE" type="button" />
-            <Button value="MAIS CARTAS" type="button" />
+            <Button
+              value="MAIS CARTAS"
+              type="button"
+              handleMoreCarts={handleMoreCarts()}
+            />
           </div>
         </div>
       </main>
