@@ -6,7 +6,7 @@ import styles from "./styles.module.scss";
 
 interface CardProps {
   mainTitle: string;
-  number: string;
+  number: number | undefined;
   title: string;
   imageUrl: string;
   color: string;

@@ -22,6 +22,7 @@ interface charactereDisney {
   url: string;
   videoGames: [string];
   _id: number;
+  randomNumber?: number;
 }
 
 const Cards: NextPage = () => {
@@ -41,9 +42,14 @@ const Cards: NextPage = () => {
   function processingResponse(data: charactereDisney[]) {
     data.map((character: charactereDisney, position: number) => {
       if (position < 8) {
-        setDataCharacters((prev) => [...prev, character]);
+        setDataCharacters((prev) => [
+          ...prev,
+          { ...character, randomNumber: Math.floor(Math.random() * 10) + 1 },
+        ]);
       }
     });
+
+    console.log(dataCharacters);
   }
 
   function getMainTitle({
@@ -88,7 +94,9 @@ const Cards: NextPage = () => {
   }
 
   function handleMoreCarts() {
-    console.log("Akiii");
+    if (showCardsUntil < 8) {
+      return setShowCardsUntil(showCardsUntil + 1);
+    }
   }
 
   useEffect(() => {
@@ -122,7 +130,7 @@ const Cards: NextPage = () => {
                     <Card
                       key={characterDisney["_id"]}
                       mainTitle={getMainTitle(characterDisney)}
-                      number="8"
+                      number={characterDisney.randomNumber}
                       title={characterDisney.name}
                       imageUrl={characterDisney.imageUrl}
                       color="orange"
@@ -138,7 +146,7 @@ const Cards: NextPage = () => {
             <Button
               value="MAIS CARTAS"
               type="button"
-              handleMoreCarts={handleMoreCarts()}
+              handleMoreCarts={() => handleMoreCarts()}
             />
           </div>
         </div>
