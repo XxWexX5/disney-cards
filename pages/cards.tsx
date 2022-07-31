@@ -60,31 +60,31 @@ const Cards: NextPage = () => {
     videoGames,
     name,
   }: charactereDisney) {
-    if (allies.length > 0) {
+    if (allies && allies.length > 0) {
       return allies[0];
     }
 
-    if (enemies.length > 0) {
+    if (enemies && enemies.length > 0) {
       return enemies[0];
     }
 
-    if (films.length > 0) {
+    if (films && films.length > 0) {
       return films[0];
     }
 
-    if (parkAttractions.length > 0) {
+    if (parkAttractions && parkAttractions.length > 0) {
       return parkAttractions[0];
     }
 
-    if (shortFilms.length > 0) {
+    if (shortFilms && shortFilms.length > 0) {
       return shortFilms[0];
     }
 
-    if (tvShows.length > 0) {
+    if (tvShows && tvShows.length > 0) {
       return tvShows[0];
     }
 
-    if (videoGames.length > 0) {
+    if (videoGames && videoGames.length > 0) {
       return videoGames[0];
     }
 
@@ -95,6 +95,17 @@ const Cards: NextPage = () => {
     if (showCardsUntil < 8) {
       return setShowCardsUntil(showCardsUntil + 1);
     }
+  }
+
+  function randomProperty(sourceArray: any) {
+    for (var i = 0; i < sourceArray.length - 1; i++) {
+      var j = i + Math.floor(Math.random() * (sourceArray.length - i));
+      var temp = sourceArray[j];
+      sourceArray[j] = sourceArray[i];
+      sourceArray[i] = temp;
+    }
+
+    setDataCharacters(sourceArray);
   }
 
   useEffect(() => {
@@ -140,7 +151,11 @@ const Cards: NextPage = () => {
           </div>
 
           <div className={styled.wrapperButtons}>
-            <Button value="RANDOMIZE" type="button" />
+            <Button
+              value="RANDOMIZE"
+              type="button"
+              randomProperty={() => randomProperty(dataCharacters)}
+            />
             <Button
               value="MAIS CARTAS"
               type="button"

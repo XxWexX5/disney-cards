@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import styles from "./styles.module.scss";
 
 interface TagProps {
@@ -5,10 +6,14 @@ interface TagProps {
 }
 
 export function Tag({ value }: TagProps) {
-  let username = "";
+  const [username, setUsername] = useState("");
+
+  useEffect(() => {
+    const usernameValue = localStorage.getItem("username") || "username";
+    setUsername(usernameValue);
+  }, []);
 
   if (typeof window !== "undefined") {
-    username = localStorage.getItem("username") || "username";
   }
 
   return (
