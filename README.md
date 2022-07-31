@@ -1,3 +1,3 @@
 ### Disney Cards
 
-![Layout Disney Cards](https://i.ibb.co/b5HRX1g/screen-capture.gif)
+![Layout Disney Cards](https://www.industrialempathy.com/img/remote/ZiClJf-1920w.jpg)
