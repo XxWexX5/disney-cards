@@ -3,6 +3,9 @@ https://disney-cards.vercel.app/
 
 [![Layout.png](https://i.postimg.cc/W4RPSPZZ/Layout.png)](https://postimg.cc/k2yZXzfM)
 
+### Figma
+https://www.figma.com/file/parPKyxyJ2FE2Vn0PDJcKN/Cards?node-id=0%3A1
+
 ### Segue os passos abaixo para executar a aplicação:
 * Clone este repositório;
 * Navegue até a pasta;
