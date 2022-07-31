@@ -26,9 +26,9 @@ interface charactereDisney {
 }
 
 const Cards: NextPage = () => {
-  const [responseAPI, setResponseAPI] = useState([]);
+  const [responseAPI, setResponseAPI] = useState<[]>([]);
   const [dataCharacters, setDataCharacters] = useState<charactereDisney[]>([]);
-  const [showCardsUntil, setShowCardsUntil] = useState(5);
+  const [showCardsUntil, setShowCardsUntil] = useState<number>(5);
 
   async function getDisneyCharacters() {
     const {

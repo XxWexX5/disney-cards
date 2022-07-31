@@ -33,7 +33,7 @@ interface FormProps {
 }
 
 export function Form({ textField, button }: FormProps) {
-  const [username, setUsername] = useState("");
+  const [username, setUsername] = useState<string>("");
 
   function handleSubmit(event: SyntheticEvent) {
     event.preventDefault();
