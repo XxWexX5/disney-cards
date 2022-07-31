@@ -26,6 +26,7 @@ interface charactereDisney {
 }
 
 const Cards: NextPage = () => {
+  const [responseAPI, setResponseAPI] = useState([]);
   const [dataCharacters, setDataCharacters] = useState<charactereDisney[]>([]);
   const [showCardsUntil, setShowCardsUntil] = useState(5);
 
@@ -35,13 +36,16 @@ const Cards: NextPage = () => {
     } = await api.get("/");
 
     if (data) {
-      processingResponse(data);
+      setResponseAPI(data);
+      processingResponse();
     }
   }
 
-  function processingResponse(data: charactereDisney[]) {
-    data.map((character: charactereDisney, position: number) => {
-      if (position < 8) {
+  function processingResponse() {
+    setDataCharacters([]);
+
+    responseAPI.map((character: charactereDisney, position: number) => {
+      if (position < showCardsUntil) {
         setDataCharacters((prev) => [
           ...prev,
           { ...character, randomNumber: Math.floor(Math.random() * 10) + 1 },
@@ -99,7 +103,6 @@ const Cards: NextPage = () => {
 
   function randomProperty() {
     const newArray = shuffle(dataCharacters);
-    console.log(newArray);
 
     setDataCharacters(() => [...newArray]);
   }
@@ -118,6 +121,10 @@ const Cards: NextPage = () => {
   useEffect(() => {
     getDisneyCharacters();
   }, []);
+
+  useEffect(() => {
+    processingResponse();
+  }, [responseAPI, showCardsUntil]);
 
   return (
     <>

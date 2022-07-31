@@ -26,6 +26,10 @@ export function Button({
           {value}
         </button>
       )}
+
+      {!randomProperty && !handleMoreCarts && (
+        <button type={type}>{value}</button>
+      )}
     </div>
   );
 }
