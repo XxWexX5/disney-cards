@@ -1,4 +1,6 @@
-import { SyntheticEvent } from "react";
+import Router from "next/router";
+
+import { SyntheticEvent, useState } from "react";
 import { TextField } from "../TextField";
 import { Button } from "../Button";
 
@@ -31,8 +33,14 @@ interface FormProps {
 }
 
 export function Form({ textField, button }: FormProps) {
+  const [username, setUsername] = useState("");
+
   function handleSubmit(event: SyntheticEvent) {
     event.preventDefault();
+
+    localStorage.setItem("username", username);
+
+    Router.push("/cards");
   }
 
   return (
@@ -48,6 +56,8 @@ export function Form({ textField, button }: FormProps) {
             placeholder: textField.input.placeholder,
             id: textField.input.id,
           }}
+          username={username}
+          setUsername={setUsername}
         />
 
         <Button value={button.value} type={button.type} />

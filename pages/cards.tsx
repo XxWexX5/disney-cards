@@ -48,8 +48,6 @@ const Cards: NextPage = () => {
         ]);
       }
     });
-
-    console.log(dataCharacters);
   }
 
   function getMainTitle({

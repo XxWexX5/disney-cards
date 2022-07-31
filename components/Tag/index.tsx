@@ -5,7 +5,7 @@ interface TagProps {
 }
 
 export function Tag({ value }: TagProps) {
-  const username = "Wevison";
+  const username = localStorage.getItem("username");
 
   return (
     <header className={styles.containerTag}>
