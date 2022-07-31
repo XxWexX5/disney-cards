@@ -36,7 +36,7 @@ const Cards: NextPage = () => {
     } = await api.get("/");
 
     if (data) {
-      setResponseAPI(data);
+      setResponseAPI(shuffle(data));
       processingResponse();
     }
   }
