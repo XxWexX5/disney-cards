@@ -5,7 +5,11 @@ interface TagProps {
 }
 
 export function Tag({ value }: TagProps) {
-  const username = localStorage.getItem("username");
+  let username = "";
+
+  if (typeof window !== "undefined") {
+    username = localStorage.getItem("username") || "username";
+  }
 
   return (
     <header className={styles.containerTag}>
