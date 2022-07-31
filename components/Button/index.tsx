@@ -4,14 +4,14 @@ interface ButtonProps {
   value: string;
   type: "button" | "submit";
   handleMoreCarts?: any;
-  randomProperty?: any;
+  handleRandomProperty?: any;
 }
 
 export function Button({
   value,
   type,
   handleMoreCarts,
-  randomProperty,
+  handleRandomProperty,
 }: ButtonProps) {
   return (
     <div className={styles.containerButton}>
@@ -21,13 +21,13 @@ export function Button({
         </button>
       )}
 
-      {randomProperty && (
-        <button type={type} onClick={randomProperty}>
+      {handleRandomProperty && (
+        <button type={type} onClick={handleRandomProperty}>
           {value}
         </button>
       )}
 
-      {!randomProperty && !handleMoreCarts && (
+      {!handleRandomProperty && !handleMoreCarts && (
         <button type={type}>{value}</button>
       )}
     </div>

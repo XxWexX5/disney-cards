@@ -101,7 +101,7 @@ const Cards: NextPage = () => {
     }
   }
 
-  function randomProperty() {
+  function handleRandomProperty() {
     const newArray = shuffle(dataCharacters);
 
     setDataCharacters(() => [...newArray]);
@@ -168,7 +168,7 @@ const Cards: NextPage = () => {
             <Button
               value="RANDOMIZE"
               type="button"
-              randomProperty={() => randomProperty()}
+              handleRandomProperty={() => handleRandomProperty()}
             />
             <Button
               value="MAIS CARTAS"
