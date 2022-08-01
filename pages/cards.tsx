@@ -143,7 +143,7 @@ const Cards: NextPage = () => {
 
       <main className={styled.containerCards}>
         <div className={styled.wrapperContent}>
-          <Tag value="Seja bem vindo," />
+          <Tag value="Seja bem vindo(a)," />
 
           <div className={styled.wrapperCards}>
             {dataCharacters.map(
